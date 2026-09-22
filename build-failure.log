@@ -20,33 +20,45 @@ Daemon will be stopped at the end of the build
 > Task :app:compileDebugShaders NO-SOURCE
 > Task :app:generateDebugAssets UP-TO-DATE
 > Task :app:mergeDebugAssets
-> Task :app:compressDebugAssets
 > Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:compressDebugAssets
+> Task :app:processDebugManifestForPackage
 > Task :app:mergeLibDexDebug
 
 > Task :app:desugarDebugFileDependencies
 WARNING: /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/libs/RootEncoder.jar: D8: Invalid stack map table at instruction index 2: invokespecial Ljava/lang/Object;<init>()V, error: Constructor mismatch, expected constructor from com.pedro.common.AudioCodec, but was java.lang.Object.<init>().
 WARNING: /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/libs/RootEncoder.jar: D8: Invalid stack map table at instruction index 2: invokespecial Ljava/lang/Object;<init>()V, error: Constructor mismatch, expected constructor from com.pedro.common.VideoCodec, but was java.lang.Object.<init>().
 
+> Task :app:processDebugResources
+> Task :app:mergeExtDexDebug
+
 > Task :app:configureCMakeDebug[arm64-v8a]
 [CXX5304] This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
 [CXX5304] This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
 
-> Task :app:processDebugManifestForPackage
-> Task :app:mergeExtDexDebug
 > Task :app:buildCMakeDebug[arm64-v8a]
 > Task :app:mergeDebugJniLibFolders
 > Task :app:mergeDebugNativeLibs
 > Task :app:validateSigningDebug
 > Task :app:writeDebugAppMetadata
 > Task :app:writeDebugSigningConfigVersions
-> Task :app:processDebugResources
 > Task :app:stripDebugDebugSymbols
 > Task :app:compileDebugKotlin
-e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/CompositorRenderer.kt:241:26 Unresolved reference: frameBus
-e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:6:23 Conflicting import, imported name 'GLES20' is ambiguous
-e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:7:23 Conflicting import, imported name 'GLES20' is ambiguous
-e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/transition/TransitionManager.kt:127:26 Unresolved reference: frameBus
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/camera/CameraManager.kt:30:31 Unresolved reference: VideoCapture
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/camera/CameraManager.kt:30:44 Unresolved reference: Recorder
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/camera/CameraManager.kt:189:21 'if' must have both main and 'else' branches if used as an expression
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/camera/CameraManager.kt:209:25 'if' must have both main and 'else' branches if used as an expression
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/camera/CameraManager.kt:365:28 Unresolved reference: VideoCapture
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/camera/CameraManager.kt:365:41 Unresolved reference: Recorder
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/replay/InstantReplayManager.kt:347:7 Redeclaration: ReplayBuffer
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/replay/ReplayBuffer.kt:21:7 Redeclaration: ReplayBuffer
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/streaming/MkvRecordingManager.kt:67:30 No value passed for parameter 'width'
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/streaming/MkvRecordingManager.kt:67:30 No value passed for parameter 'height'
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/streaming/MkvRecordingManager.kt:101:44 Unresolved reference: addVideoTrack
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/streaming/MkvRecordingManager.kt:110:40 Unresolved reference: writeVideoSample
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/streaming/MkvRecordingManager.kt:175:20 Unresolved reference: release
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/ui/components/RawCameraPreview.kt:268:51 Unresolved reference: asImageBitmap
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/ui/components/RawCameraPreview.kt:304:68 Unresolved reference: CheckCircle
 
 > Task :app:compileDebugKotlin FAILED
 
@@ -255,5 +267,5 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	... 2 more
 
 
-BUILD FAILED in 3m 5s
+BUILD FAILED in 2m 14s
 30 actionable tasks: 29 executed, 1 up-to-date
