@@ -9,9 +9,9 @@ Daemon will be stopped at the end of the build
 > Task :app:mapDebugSourceSetPaths
 > Task :app:generateDebugResources
 > Task :app:packageDebugResources
+> Task :app:mergeDebugResources
 > Task :app:createDebugCompatibleScreenManifests
 > Task :app:extractDeepLinksDebug
-> Task :app:mergeDebugResources
 > Task :app:parseDebugLocalResources
 > Task :app:processDebugMainManifest
 > Task :app:processDebugManifest
@@ -20,32 +20,527 @@ Daemon will be stopped at the end of the build
 > Task :app:compileDebugShaders NO-SOURCE
 > Task :app:generateDebugAssets UP-TO-DATE
 > Task :app:mergeDebugAssets
+> Task :app:processDebugManifestForPackage
 > Task :app:compressDebugAssets
-> Task :app:checkDebugDuplicateClasses UP-TO-DATE
-> Task :app:mergeLibDexDebug
 
 > Task :app:desugarDebugFileDependencies
 WARNING: /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/libs/RootEncoder.jar: D8: Invalid stack map table at instruction index 2: invokespecial Ljava/lang/Object;<init>()V, error: Constructor mismatch, expected constructor from com.pedro.common.AudioCodec, but was java.lang.Object.<init>().
 WARNING: /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/libs/RootEncoder.jar: D8: Invalid stack map table at instruction index 2: invokespecial Ljava/lang/Object;<init>()V, error: Constructor mismatch, expected constructor from com.pedro.common.VideoCodec, but was java.lang.Object.<init>().
 
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :app:processDebugResources
+> Task :app:mergeExtDexDebug
+> Task :app:mergeLibDexDebug
+
 > Task :app:configureCMakeDebug[arm64-v8a]
 [CXX5304] This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
 [CXX5304] This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
 
-> Task :app:processDebugManifestForPackage
-> Task :app:mergeExtDexDebug
 > Task :app:buildCMakeDebug[arm64-v8a]
 > Task :app:mergeDebugJniLibFolders
-> Task :app:mergeDebugNativeLibs
 > Task :app:validateSigningDebug
-> Task :app:stripDebugDebugSymbols
 > Task :app:writeDebugAppMetadata
 > Task :app:writeDebugSigningConfigVersions
-> Task :app:processDebugResources
+> Task :app:mergeDebugNativeLibs
+> Task :app:stripDebugDebugSymbols
 > Task :app:compileDebugKotlin
-e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/ui/components/GLPreview.kt:60:13 Try catch is not supported around composable function invocations.
-e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/ui/components/RawCameraPreview.kt:133:81 Suspension functions can be called only within coroutine body
-e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/ui/components/RawCameraPreview.kt:161:25 Try catch is not supported around composable function invocations.
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:260:69 Expecting '"'
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:261:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:261:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:261:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:262:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:262:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:262:27 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:263:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:263:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:263:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:264:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:264:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:264:25 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:265:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:265:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:265:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:266:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:266:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:266:15 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:267:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:267:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:267:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:268:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:268:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:268:28 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:269:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:269:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:269:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:270:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:270:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:270:26 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:271:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:271:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:271:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:272:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:272:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:272:3 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:273:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:273:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:275:76 Expecting '"'
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:276:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:276:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:276:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:277:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:277:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:277:27 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:278:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:278:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:278:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:279:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:279:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:279:25 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:280:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:280:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:280:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:281:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:281:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:281:15 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:282:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:282:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:282:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:283:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:283:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:283:28 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:284:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:284:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:284:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:285:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:285:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:285:26 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:286:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:286:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:286:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:287:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:287:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:287:3 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:288:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:288:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:290:83 Expecting '"'
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:291:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:291:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:291:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:292:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:292:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:292:25 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:293:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:293:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:293:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:294:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:294:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:294:22 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:295:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:295:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:295:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:296:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:296:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:296:15 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:297:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:297:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:297:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:298:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:298:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:298:26 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:299:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:299:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:299:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:300:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:300:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:300:15 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:301:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:301:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:301:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:302:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:302:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:302:46 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:303:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:303:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:303:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:304:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:304:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:304:51 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:305:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:305:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:305:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:306:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:306:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:306:51 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:307:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:307:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:307:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:308:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:308:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:308:51 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:309:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:309:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:309:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:310:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:310:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:310:51 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:311:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:311:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:311:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:312:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:312:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:312:37 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:313:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:313:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:313:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:314:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:314:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:314:36 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:315:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:315:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:315:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:316:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:316:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:316:3 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:317:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:317:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:319:96 Expecting '"'
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:320:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:320:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:320:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:321:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:321:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:321:26 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:322:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:322:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:322:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:323:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:323:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:323:25 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:324:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:324:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:324:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:325:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:325:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:325:38 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:326:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:326:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:326:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:327:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:327:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:327:15 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:328:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:328:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:328:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:329:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:329:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:329:50 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:330:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:330:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:330:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:331:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:331:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:331:3 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:332:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/CameraInputNode.kt:332:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:157:73 Expecting '"'
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:158:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:158:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:158:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:159:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:159:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:159:25 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:160:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:160:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:160:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:161:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:161:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:161:29 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:162:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:162:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:162:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:163:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:163:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:163:15 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:164:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:164:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:164:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:165:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:165:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:165:50 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:166:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:166:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:166:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:167:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:167:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:167:3 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:168:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ImageNode.kt:168:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:302:74 Expecting '"'
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:303:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:303:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:303:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:304:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:304:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:304:25 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:305:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:305:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:305:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:306:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:306:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:306:29 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:307:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:307:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:307:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:308:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:308:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:308:25 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:309:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:309:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:309:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:310:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:310:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:310:27 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:311:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:311:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:311:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:312:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:312:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:312:25 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:313:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:313:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:313:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:314:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:314:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:314:15 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:315:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:315:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:315:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:316:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:316:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:316:46 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:317:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:317:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:317:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:318:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:318:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:318:25 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:319:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:319:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:319:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:320:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:320:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:320:51 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:321:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:321:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:321:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:322:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:322:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:322:55 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:323:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:323:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:323:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:324:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:324:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:324:43 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:325:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:325:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:325:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:326:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:326:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:326:3 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:327:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:327:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:6:23 Conflicting import, imported name 'GLES20' is ambiguous
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/LUTNode.kt:7:23 Conflicting import, imported name 'GLES20' is ambiguous
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:412:83 Expecting '"'
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:413:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:413:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:413:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:414:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:414:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:414:25 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:415:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:415:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:415:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:416:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:416:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:416:29 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:417:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:417:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:417:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:418:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:418:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:418:15 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:419:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:419:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:419:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:420:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:420:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:420:50 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:421:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:421:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:421:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:422:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:422:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:422:3 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:423:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:423:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:425:110 Expecting '"'
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:426:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:426:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:426:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:427:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:427:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:427:26 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:428:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:428:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:428:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:429:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:429:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:429:25 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:430:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:430:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:430:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:431:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:431:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:431:38 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:432:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:432:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:432:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:433:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:433:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:433:15 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:434:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:434:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:434:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:435:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:435:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:435:50 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:436:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:436:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:436:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:437:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:437:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:437:3 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:438:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/OutputNode.kt:438:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:234:69 Expecting '"'
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:235:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:235:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:235:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:236:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:236:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:236:27 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:237:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:237:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:237:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:238:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:238:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:238:25 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:239:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:239:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:239:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:240:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:240:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:240:15 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:241:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:241:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:241:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:242:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:242:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:242:28 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:243:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:243:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:243:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:244:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:244:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:244:26 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:245:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:245:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:245:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:246:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:246:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:246:3 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:247:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:247:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:249:96 Expecting '"'
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:250:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:250:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:250:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:251:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:251:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:251:26 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:252:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:252:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:252:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:253:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:253:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:253:25 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:254:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:254:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:254:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:255:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:255:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:255:38 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:256:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:256:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:256:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:257:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:257:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:257:15 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:258:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:258:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:258:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:259:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:259:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:259:50 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:260:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:260:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:260:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:261:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:261:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:261:3 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:262:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/ScreenCaptureNode.kt:262:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:204:96 Expecting '"'
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:205:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:205:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:205:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:206:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:206:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:206:26 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:207:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:207:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:207:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:208:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:208:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:208:25 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:209:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:209:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:209:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:210:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:210:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:210:38 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:211:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:211:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:211:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:212:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:212:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:212:15 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:213:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:213:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:213:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:214:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:214:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:214:50 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:215:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:215:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:215:4 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:216:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:216:2 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:216:3 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:217:1 Expecting member declaration
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/compositor/nodes/VideoFileNode.kt:217:2 Expecting member declaration
 
 > Task :app:compileDebugKotlin FAILED
 
@@ -254,5 +749,5 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	... 2 more
 
 
-BUILD FAILED in 2m 19s
+BUILD FAILED in 2m 12s
 30 actionable tasks: 29 executed, 1 up-to-date
