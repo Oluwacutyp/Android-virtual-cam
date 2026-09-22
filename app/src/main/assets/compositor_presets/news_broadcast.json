@@ -1,0 +1,163 @@
+{
+    "nodes": [
+        {
+            "id": "camera_anchor",
+            "type": "CameraInput",
+            "parameters": {
+                "ints": {
+                    "width": 1280,
+                    "height": 720
+                }
+            },
+            "inputConnections": []
+        },
+        {
+            "id": "center_stage_1",
+            "type": "CenterStage",
+            "parameters": {
+                "floats": {
+                    "centerX": 0.5,
+                    "centerY": 0.5,
+                    "zoom": 1.0,
+                    "maxZoom": 3.0,
+                    "padding": 1.8
+                },
+                "bools": {
+                    "enabled": false,
+                    "smoothing": true
+                },
+                "strings": {
+                    "trackingMode": "GROUP"
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "camera_anchor",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "cc_broadcast",
+            "type": "ColorCorrection",
+            "parameters": {
+                "floats": {
+                    "saturation": 1.1,
+                    "contrast": 1.1,
+                    "brightness": 0.02
+                },
+                "vec3s": {
+                    "lift": [
+                        0.0,
+                        0.0,
+                        0.0
+                    ],
+                    "gamma": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ],
+                    "gain": [
+                        1.05,
+                        1.05,
+                        1.05
+                    ]
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "center_stage_1",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "lt_news",
+            "type": "LowerThird",
+            "parameters": {
+                "strings": {
+                    "title": "BREAKING NEWS",
+                    "subtitle": "Live from Studio",
+                    "style": "Broadcast",
+                    "position": "Bottom"
+                },
+                "vec3s": {
+                    "primaryColor": [
+                        0.8,
+                        0.1,
+                        0.1
+                    ],
+                    "secondaryColor": [
+                        0.1,
+                        0.1,
+                        0.8
+                    ],
+                    "textColor": [
+                        1.0,
+                        1.0,
+                        1.0
+                    ]
+                },
+                "bools": {
+                    "show": true
+                },
+                "floats": {
+                    "animationProgress": 1.0,
+                    "duration": 5.0
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "cc_broadcast",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "output_1",
+            "type": "Output",
+            "parameters": {
+                "ints": {
+                    "width": 1280,
+                    "height": 720
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "lt_news",
+                    "fromOutputId": "output"
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "fromNodeId": "camera_anchor",
+            "fromOutputId": "output",
+            "toNodeId": "center_stage_1",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "center_stage_1",
+            "fromOutputId": "output",
+            "toNodeId": "cc_broadcast",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "cc_broadcast",
+            "fromOutputId": "output",
+            "toNodeId": "lt_news",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "lt_news",
+            "fromOutputId": "output",
+            "toNodeId": "output_1",
+            "toInputId": "input"
+        }
+    ]
+}

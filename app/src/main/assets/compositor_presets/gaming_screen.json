@@ -1,0 +1,163 @@
+{
+    "nodes": [
+        {
+            "id": "screen_capture_1",
+            "type": "ScreenCapture",
+            "parameters": {
+                "ints": {
+                    "width": 1280,
+                    "height": 720,
+                    "dpi": 320
+                },
+                "bools": {
+                    "isCapturing": false
+                }
+            },
+            "inputConnections": []
+        },
+        {
+            "id": "cam_small",
+            "type": "CameraInput",
+            "parameters": {
+                "ints": {
+                    "width": 320,
+                    "height": 240
+                },
+                "bools": {
+                    "mirrored": true
+                }
+            },
+            "inputConnections": []
+        },
+        {
+            "id": "center_stage_1",
+            "type": "CenterStage",
+            "parameters": {
+                "floats": {
+                    "centerX": 0.5,
+                    "centerY": 0.5,
+                    "zoom": 1.0,
+                    "maxZoom": 3.0,
+                    "padding": 1.8
+                },
+                "bools": {
+                    "enabled": false,
+                    "smoothing": true
+                },
+                "strings": {
+                    "trackingMode": "GROUP"
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "cam_small",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "blend_game",
+            "type": "Blend",
+            "parameters": {
+                "strings": {
+                    "mode": "Normal"
+                },
+                "floats": {
+                    "opacity": 1.0
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "base",
+                    "fromNodeId": "screen_capture_1",
+                    "fromOutputId": "output"
+                },
+                {
+                    "inputSocketId": "blend",
+                    "fromNodeId": "center_stage_1",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "lt_gaming",
+            "type": "LowerThird",
+            "parameters": {
+                "strings": {
+                    "title": "LIVE GAMEPLAY",
+                    "subtitle": "Screen + Camera",
+                    "style": "Gaming",
+                    "position": "Bottom"
+                },
+                "vec3s": {
+                    "primaryColor": [0.2, 0.8, 0.2],
+                    "secondaryColor": [0.1, 0.1, 0.1],
+                    "textColor": [1.0, 1.0, 1.0]
+                },
+                "bools": {
+                    "show": true
+                },
+                "floats": {
+                    "animationProgress": 1.0
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "blend_game",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "output_1",
+            "type": "Output",
+            "parameters": {
+                "ints": {
+                    "width": 1280,
+                    "height": 720
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "lt_gaming",
+                    "fromOutputId": "output"
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "fromNodeId": "cam_small",
+            "fromOutputId": "output",
+            "toNodeId": "center_stage_1",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "screen_capture_1",
+            "fromOutputId": "output",
+            "toNodeId": "blend_game",
+            "toInputId": "base"
+        },
+        {
+            "fromNodeId": "center_stage_1",
+            "fromOutputId": "output",
+            "toNodeId": "blend_game",
+            "toInputId": "blend"
+        },
+        {
+            "fromNodeId": "blend_game",
+            "fromOutputId": "output",
+            "toNodeId": "lt_gaming",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "lt_gaming",
+            "fromOutputId": "output",
+            "toNodeId": "output_1",
+            "toInputId": "input"
+        }
+    ]
+}

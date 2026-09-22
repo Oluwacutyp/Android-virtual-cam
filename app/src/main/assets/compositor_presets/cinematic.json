@@ -1,0 +1,142 @@
+{
+    "nodes": [
+        {
+            "id": "camera_1",
+            "type": "CameraInput",
+            "parameters": {
+                "ints": {
+                    "width": 1280,
+                    "height": 720
+                }
+            },
+            "inputConnections": []
+        },
+        {
+            "id": "center_stage_1",
+            "type": "CenterStage",
+            "parameters": {
+                "floats": {
+                    "centerX": 0.5,
+                    "centerY": 0.5,
+                    "zoom": 1.0,
+                    "maxZoom": 3.0,
+                    "padding": 1.8
+                },
+                "bools": {
+                    "enabled": false,
+                    "smoothing": true
+                },
+                "strings": {
+                    "trackingMode": "GROUP"
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "camera_1",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "lut_cinematic",
+            "type": "LUT",
+            "parameters": {
+                "strings": {
+                    "lutPath": "luts/cinematic.cube"
+                },
+                "ints": {
+                    "lutSize": 32
+                },
+                "floats": {
+                    "intensity": 0.8
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "center_stage_1",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "cc_film",
+            "type": "ColorCorrection",
+            "parameters": {
+                "floats": {
+                    "saturation": 0.9,
+                    "contrast": 1.15,
+                    "brightness": -0.05
+                },
+                "vec3s": {
+                    "lift": [
+                        0.02,
+                        0.02,
+                        0.02
+                    ],
+                    "gamma": [
+                        0.95,
+                        0.95,
+                        1.05
+                    ],
+                    "gain": [
+                        1.1,
+                        1.05,
+                        0.95
+                    ]
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "lut_cinematic",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "output_1",
+            "type": "Output",
+            "parameters": {
+                "ints": {
+                    "width": 1280,
+                    "height": 720
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "cc_film",
+                    "fromOutputId": "output"
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "fromNodeId": "camera_1",
+            "fromOutputId": "output",
+            "toNodeId": "center_stage_1",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "center_stage_1",
+            "fromOutputId": "output",
+            "toNodeId": "lut_cinematic",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "lut_cinematic",
+            "fromOutputId": "output",
+            "toNodeId": "cc_film",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "cc_film",
+            "fromOutputId": "output",
+            "toNodeId": "output_1",
+            "toInputId": "input"
+        }
+    ]
+}

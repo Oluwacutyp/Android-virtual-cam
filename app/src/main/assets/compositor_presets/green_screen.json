@@ -1,0 +1,162 @@
+{
+    "nodes": [
+        {
+            "id": "camera_1",
+            "type": "CameraInput",
+            "parameters": {
+                "ints": {
+                    "width": 1280,
+                    "height": 720
+                },
+                "bools": {
+                    "mirrored": false
+                }
+            },
+            "inputConnections": []
+        },
+        {
+            "id": "center_stage_1",
+            "type": "CenterStage",
+            "parameters": {
+                "floats": {
+                    "centerX": 0.5,
+                    "centerY": 0.5,
+                    "zoom": 1.0,
+                    "maxZoom": 3.0,
+                    "padding": 1.8
+                },
+                "bools": {
+                    "enabled": false,
+                    "smoothing": true
+                },
+                "strings": {
+                    "trackingMode": "GROUP"
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "camera_1",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "bg_1",
+            "type": "Image",
+            "parameters": {
+                "strings": {
+                    "resName": "green_screen_bg"
+                },
+                "bools": {
+                    "mipmap": true
+                },
+                "ints": {
+                    "maxSize": 1024
+                }
+            },
+            "inputConnections": []
+        },
+        {
+            "id": "chroma_1",
+            "type": "ChromaKey",
+            "parameters": {
+                "floats": {
+                    "threshold": 0.4,
+                    "slope": 0.1,
+                    "spill": 0.5
+                },
+                "vec3s": {
+                    "keyColor": [
+                        0.0,
+                        1.0,
+                        0.0
+                    ]
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "center_stage_1",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "bg_replace_1",
+            "type": "BackgroundReplace",
+            "parameters": {
+                "bools": {
+                    "invertMask": false
+                },
+                "floats": {
+                    "edgeFeather": 0.02
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "foreground",
+                    "fromNodeId": "chroma_1",
+                    "fromOutputId": "output"
+                },
+                {
+                    "inputSocketId": "background",
+                    "fromNodeId": "bg_1",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "output_1",
+            "type": "Output",
+            "parameters": {
+                "ints": {
+                    "width": 1280,
+                    "height": 720
+                },
+                "bools": {
+                    "enableBus": true
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "bg_replace_1",
+                    "fromOutputId": "output"
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "fromNodeId": "camera_1",
+            "fromOutputId": "output",
+            "toNodeId": "center_stage_1",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "center_stage_1",
+            "fromOutputId": "output",
+            "toNodeId": "chroma_1",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "chroma_1",
+            "fromOutputId": "output",
+            "toNodeId": "bg_replace_1",
+            "toInputId": "foreground"
+        },
+        {
+            "fromNodeId": "bg_1",
+            "fromOutputId": "output",
+            "toNodeId": "bg_replace_1",
+            "toInputId": "background"
+        },
+        {
+            "fromNodeId": "bg_replace_1",
+            "fromOutputId": "output",
+            "toNodeId": "output_1",
+            "toInputId": "input"
+        }
+    ]
+}

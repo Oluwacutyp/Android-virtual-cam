@@ -1,0 +1,166 @@
+{
+    "nodes": [
+        {
+            "id": "slides",
+            "type": "Image",
+            "parameters": {
+                "strings": {
+                    "resName": "presentation_slide"
+                },
+                "ints": {
+                    "maxSize": 1920
+                }
+            },
+            "inputConnections": []
+        },
+        {
+            "id": "presenter_cam",
+            "type": "CameraInput",
+            "parameters": {
+                "ints": {
+                    "width": 320,
+                    "height": 240
+                }
+            },
+            "inputConnections": []
+        },
+        {
+            "id": "center_stage_1",
+            "type": "CenterStage",
+            "parameters": {
+                "floats": {
+                    "centerX": 0.5,
+                    "centerY": 0.5,
+                    "zoom": 1.0,
+                    "maxZoom": 3.0,
+                    "padding": 1.8
+                },
+                "bools": {
+                    "enabled": false,
+                    "smoothing": true
+                },
+                "strings": {
+                    "trackingMode": "GROUP"
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "presenter_cam",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "blend_pres",
+            "type": "Blend",
+            "parameters": {
+                "strings": {
+                    "mode": "Normal"
+                },
+                "floats": {
+                    "opacity": 1.0
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "base",
+                    "fromNodeId": "slides",
+                    "fromOutputId": "output"
+                },
+                {
+                    "inputSocketId": "blend",
+                    "fromNodeId": "center_stage_1",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "slide_title",
+            "type": "TextOverlay",
+            "parameters": {
+                "strings": {
+                    "text": "Q4 Presentation",
+                    "animation": "Fade"
+                },
+                "ints": {
+                    "fontSize": 36
+                },
+                "floats": {
+                    "x": 0.5,
+                    "y": 0.95
+                },
+                "vec4s": {
+                    "color": [
+                        0.0,
+                        0.0,
+                        0.0,
+                        1.0
+                    ],
+                    "backgroundColor": [
+                        1.0,
+                        1.0,
+                        1.0,
+                        0.8
+                    ]
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "blend_pres",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "output_1",
+            "type": "Output",
+            "parameters": {
+                "ints": {
+                    "width": 1280,
+                    "height": 720
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "slide_title",
+                    "fromOutputId": "output"
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "fromNodeId": "presenter_cam",
+            "fromOutputId": "output",
+            "toNodeId": "center_stage_1",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "slides",
+            "fromOutputId": "output",
+            "toNodeId": "blend_pres",
+            "toInputId": "base"
+        },
+        {
+            "fromNodeId": "center_stage_1",
+            "fromOutputId": "output",
+            "toNodeId": "blend_pres",
+            "toInputId": "blend"
+        },
+        {
+            "fromNodeId": "blend_pres",
+            "fromOutputId": "output",
+            "toNodeId": "slide_title",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "slide_title",
+            "fromOutputId": "output",
+            "toNodeId": "output_1",
+            "toInputId": "input"
+        }
+    ]
+}

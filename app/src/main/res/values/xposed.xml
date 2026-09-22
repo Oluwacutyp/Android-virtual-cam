@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="xposed_scope">
+        <!-- Target all apps by default, user can select in LSPosed -->
+        <item>android</item>
+        <item>com.whatsapp</item>
+        <item>com.facebook.orca</item>
+        <item>com.instagram.android</item>
+        <item>com.zhiliaoapp.musically</item>
+        <item>com.ss.android.ugc.trill</item>
+        <item>com.google.android.apps.tachyon</item>
+        <item>us.zoom.videomeetings</item>
+        <item>com.discord</item>
+        <item>com.skype.raider</item>
+        <item>org.telegram.messenger</item>
+        <item>com.tencent.mm</item>
+        <item>com.imo.android.imoim</item>
+    </string-array>
+</resources>

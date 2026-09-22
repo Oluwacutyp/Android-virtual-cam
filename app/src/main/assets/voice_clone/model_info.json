@@ -1,0 +1,23 @@
+{
+  "model_name": "ecapa-tdnn",
+  "version": "1.0",
+  "embedding_dim": 256,
+  "sample_rate": 16000,
+  "mel_bins": 40,
+  "window_ms": 25,
+  "hop_ms": 10,
+  "training_data": "VoxCeleb1+2",
+  "license": "Apache 2.0",
+  "download_url": "https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb/resolve/main/embeddings_model.onnx",
+  "alternative_url": "https://github.com/resemble-ai/Resemblyzer",
+  "input_shape": ["batch", "time", 40],
+  "output_shape": ["batch", 256],
+  "normalization": "L2",
+  "fallback": "MFCC statistical embedding in Kotlin if ONNX not available",
+  "conversion": {
+    "formant_shift_range": [-4, 4],
+    "eq_adjustment_db": [-6, 6],
+    "real_time_model": "RVC or YourTTS encoder + HiFi-GAN vocoder",
+    "onnx_models": ["rvc_converter.onnx", "hifigan_vocoder.onnx"]
+  }
+}

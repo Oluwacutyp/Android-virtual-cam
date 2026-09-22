@@ -1,0 +1,122 @@
+{
+    "nodes": [
+        {
+            "id": "main_camera",
+            "type": "CameraInput",
+            "parameters": {
+                "ints": {
+                    "width": 1280,
+                    "height": 720
+                }
+            },
+            "inputConnections": []
+        },
+        {
+            "id": "center_stage_1",
+            "type": "CenterStage",
+            "parameters": {
+                "floats": {
+                    "centerX": 0.5,
+                    "centerY": 0.5,
+                    "zoom": 1.0,
+                    "maxZoom": 3.0,
+                    "padding": 1.8
+                },
+                "bools": {
+                    "enabled": false,
+                    "smoothing": true
+                },
+                "strings": {
+                    "trackingMode": "GROUP"
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "main_camera",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "pip_image",
+            "type": "Image",
+            "parameters": {
+                "strings": {
+                    "resName": "pip_avatar"
+                },
+                "ints": {
+                    "maxSize": 512
+                }
+            },
+            "inputConnections": []
+        },
+        {
+            "id": "blend_pip",
+            "type": "Blend",
+            "parameters": {
+                "strings": {
+                    "mode": "Normal"
+                },
+                "floats": {
+                    "opacity": 1.0
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "base",
+                    "fromNodeId": "center_stage_1",
+                    "fromOutputId": "output"
+                },
+                {
+                    "inputSocketId": "blend",
+                    "fromNodeId": "pip_image",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "output_1",
+            "type": "Output",
+            "parameters": {
+                "ints": {
+                    "width": 1280,
+                    "height": 720
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "blend_pip",
+                    "fromOutputId": "output"
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "fromNodeId": "main_camera",
+            "fromOutputId": "output",
+            "toNodeId": "center_stage_1",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "center_stage_1",
+            "fromOutputId": "output",
+            "toNodeId": "blend_pip",
+            "toInputId": "base"
+        },
+        {
+            "fromNodeId": "pip_image",
+            "fromOutputId": "output",
+            "toNodeId": "blend_pip",
+            "toInputId": "blend"
+        },
+        {
+            "fromNodeId": "blend_pip",
+            "fromOutputId": "output",
+            "toNodeId": "output_1",
+            "toInputId": "input"
+        }
+    ]
+}

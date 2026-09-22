@@ -1,0 +1,23 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+app/build/
+app/release/
+*.apk
+*.aab
+# Xposed JARs – downloaded fresh in CI via curl from GitHub releases, must NOT be committed
+# Fake empty files cause zip END header not found error
+app/libs/XposedBridgeApi-82.jar
+app/libs/api-100.jar

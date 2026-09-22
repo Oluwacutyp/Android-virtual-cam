@@ -1,0 +1,136 @@
+{
+    "nodes": [
+        {
+            "id": "camera_1",
+            "type": "CameraInput",
+            "parameters": {
+                "ints": {
+                    "width": 1280,
+                    "height": 720
+                }
+            },
+            "inputConnections": []
+        },
+        {
+            "id": "center_stage_1",
+            "type": "CenterStage",
+            "parameters": {
+                "floats": {
+                    "centerX": 0.5,
+                    "centerY": 0.5,
+                    "zoom": 1.0,
+                    "maxZoom": 3.0,
+                    "padding": 1.8
+                },
+                "bools": {
+                    "enabled": false,
+                    "smoothing": true
+                },
+                "strings": {
+                    "trackingMode": "GROUP"
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "camera_1",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "segmentation_1",
+            "type": "SegmentationMask",
+            "parameters": {
+                "floats": {
+                    "blendCurrent": 0.7,
+                    "blendPrevious": 0.3
+                },
+                "bools": {
+                    "enableTemporalFiltering": true
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "center_stage_1",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "bg_replace_1",
+            "type": "BackgroundReplace",
+            "parameters": {
+                "strings": {
+                    "backgroundType": "blur"
+                },
+                "floats": {
+                    "blurRadius": 18.0,
+                    "edgeFeather": 0.08
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "foreground",
+                    "fromNodeId": "center_stage_1",
+                    "fromOutputId": "output"
+                },
+                {
+                    "inputSocketId": "mask",
+                    "fromNodeId": "segmentation_1",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "output_1",
+            "type": "Output",
+            "parameters": {
+                "ints": {
+                    "width": 1280,
+                    "height": 720
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "bg_replace_1",
+                    "fromOutputId": "output"
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "fromNodeId": "camera_1",
+            "fromOutputId": "output",
+            "toNodeId": "center_stage_1",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "center_stage_1",
+            "fromOutputId": "output",
+            "toNodeId": "segmentation_1",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "center_stage_1",
+            "fromOutputId": "output",
+            "toNodeId": "bg_replace_1",
+            "toInputId": "foreground"
+        },
+        {
+            "fromNodeId": "segmentation_1",
+            "fromOutputId": "output",
+            "toNodeId": "bg_replace_1",
+            "toInputId": "mask"
+        },
+        {
+            "fromNodeId": "bg_replace_1",
+            "fromOutputId": "output",
+            "toNodeId": "output_1",
+            "toInputId": "input"
+        }
+    ]
+}

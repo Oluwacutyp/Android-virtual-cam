@@ -1,0 +1,161 @@
+{
+    "nodes": [
+        {
+            "id": "screen_capture_1",
+            "type": "ScreenCapture",
+            "parameters": {
+                "ints": {
+                    "width": 1280,
+                    "height": 720,
+                    "dpi": 320
+                },
+                "bools": {
+                    "isCapturing": false
+                }
+            },
+            "inputConnections": []
+        },
+        {
+            "id": "camera_pip",
+            "type": "CameraInput",
+            "parameters": {
+                "ints": {
+                    "width": 320,
+                    "height": 240
+                },
+                "bools": {
+                    "mirrored": true
+                }
+            },
+            "inputConnections": []
+        },
+        {
+            "id": "center_stage_1",
+            "type": "CenterStage",
+            "parameters": {
+                "floats": {
+                    "centerX": 0.5,
+                    "centerY": 0.5,
+                    "zoom": 1.0,
+                    "maxZoom": 3.0,
+                    "padding": 1.8
+                },
+                "bools": {
+                    "enabled": true,
+                    "smoothing": true
+                },
+                "strings": {
+                    "trackingMode": "SINGLE"
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "camera_pip",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "blend_tutorial",
+            "type": "Blend",
+            "parameters": {
+                "strings": {
+                    "mode": "Normal"
+                },
+                "floats": {
+                    "opacity": 1.0
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "base",
+                    "fromNodeId": "screen_capture_1",
+                    "fromOutputId": "output"
+                },
+                {
+                    "inputSocketId": "blend",
+                    "fromNodeId": "center_stage_1",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "tutorial_title",
+            "type": "TextOverlay",
+            "parameters": {
+                "strings": {
+                    "text": "Tutorial - Screen + Camera",
+                    "animation": "Fade"
+                },
+                "ints": {
+                    "fontSize": 32
+                },
+                "floats": {
+                    "x": 0.5,
+                    "y": 0.05
+                },
+                "vec4s": {
+                    "color": [1.0, 1.0, 1.0, 1.0],
+                    "backgroundColor": [0.0, 0.0, 0.0, 0.6]
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "blend_tutorial",
+                    "fromOutputId": "output"
+                }
+            ]
+        },
+        {
+            "id": "output_1",
+            "type": "Output",
+            "parameters": {
+                "ints": {
+                    "width": 1280,
+                    "height": 720
+                }
+            },
+            "inputConnections": [
+                {
+                    "inputSocketId": "input",
+                    "fromNodeId": "tutorial_title",
+                    "fromOutputId": "output"
+                }
+            ]
+        }
+    ],
+    "connections": [
+        {
+            "fromNodeId": "camera_pip",
+            "fromOutputId": "output",
+            "toNodeId": "center_stage_1",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "screen_capture_1",
+            "fromOutputId": "output",
+            "toNodeId": "blend_tutorial",
+            "toInputId": "base"
+        },
+        {
+            "fromNodeId": "center_stage_1",
+            "fromOutputId": "output",
+            "toNodeId": "blend_tutorial",
+            "toInputId": "blend"
+        },
+        {
+            "fromNodeId": "blend_tutorial",
+            "fromOutputId": "output",
+            "toNodeId": "tutorial_title",
+            "toInputId": "input"
+        },
+        {
+            "fromNodeId": "tutorial_title",
+            "fromOutputId": "output",
+            "toNodeId": "output_1",
+            "toInputId": "input"
+        }
+    ]
+}

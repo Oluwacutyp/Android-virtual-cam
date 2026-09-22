@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Android Virtual Cam Studio</string>
+    <string name="permission_camera_rationale">Camera access is required to show preview and compose scenes.</string>
+    <string name="permission_mic_rationale">Microphone access is required for recording and streaming with audio.</string>
+    <string name="error_camera_unavailable">Camera unavailable. Device may not support camera or is in use by another app.</string>
+    <string name="error_permission_denied">Permission denied. Please grant camera permission in settings.</string>
+    <string name="widget_description">Quick toggle for VirtualCam – start/stop VCam, streaming, recording, instant replay without opening app</string>
+</resources>
