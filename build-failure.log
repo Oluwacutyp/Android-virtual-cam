@@ -22,378 +22,33 @@ Daemon will be stopped at the end of the build
 > Task :app:mergeDebugAssets
 > Task :app:compressDebugAssets
 > Task :app:checkDebugDuplicateClasses UP-TO-DATE
-> Task :app:processDebugManifestForPackage
+> Task :app:mergeLibDexDebug
 
 > Task :app:desugarDebugFileDependencies
 WARNING: /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/libs/RootEncoder.jar: D8: Invalid stack map table at instruction index 2: invokespecial Ljava/lang/Object;<init>()V, error: Constructor mismatch, expected constructor from com.pedro.common.AudioCodec, but was java.lang.Object.<init>().
 WARNING: /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/libs/RootEncoder.jar: D8: Invalid stack map table at instruction index 2: invokespecial Ljava/lang/Object;<init>()V, error: Constructor mismatch, expected constructor from com.pedro.common.VideoCodec, but was java.lang.Object.<init>().
 
-> Task :app:processDebugResources
-> Task :app:mergeExtDexDebug
-> Task :app:mergeLibDexDebug
-
 > Task :app:configureCMakeDebug[arm64-v8a]
 [CXX5304] This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
 [CXX5304] This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
 
-> Task :app:buildCMakeDebug[arm64-v8a] FAILED
-C/C++: ninja: Entering directory `/home/runner/work/Android-virtual-cam/Android-virtual-cam/app/.cxx/Debug/2b4m6333/arm64-v8a'
-C/C++: : && /usr/local/lib/android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/usr/local/lib/android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Wl,--no-undefined -Qunused-arguments -shared -Wl,-soname,libsoundtouch.so -o /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/build/intermediates/cxx/Debug/2b4m6333/obj/arm64-v8a/libsoundtouch.so CMakeFiles/soundtouch.dir/soundtouch/source/AAFilter.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/FIFOSampleBuffer.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/FIRFilter.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/RateTransposer.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/SoundTouch.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/TDStretch.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/BPMDetect.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateCubic.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateLinear.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateShannon.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/PeakFinder.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/cpu_detect_arm.cpp.o CMakeFiles/soundtouch.dir/jni/soundtouch_jni.cpp.o  -landroid  -llog  -latomic -lm && :
-C/C++: ld: error: undefined symbol: detectCPUextensions()
-C/C++: >>> referenced by FIRFilter.cpp:302 (/home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/cpp/soundtouch/source/FIRFilter.cpp:302)
-C/C++: >>>               CMakeFiles/soundtouch.dir/soundtouch/source/FIRFilter.cpp.o:(soundtouch::FIRFilter::newInstance())
-C/C++: >>> referenced by TDStretch.cpp:747 (/home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/cpp/soundtouch/source/TDStretch.cpp:747)
-C/C++: >>>               CMakeFiles/soundtouch.dir/soundtouch/source/TDStretch.cpp.o:(soundtouch::TDStretch::newInstance())
-C/C++: clang++: error: linker command failed with exit code 1 (use -v to see invocation)
-C/C++: [25/28] Building CXX object CMakeFiles/vcamdsp.dir/jni/vcamdsp_jni.cpp.o
-C/C++: [26/28] Building CXX object CMakeFiles/vcamyuv.dir/vcamyuv/yuv_scaler.cpp.o
-C/C++: ninja: build stopped: subcommand failed.
-
+> Task :app:processDebugManifestForPackage
+> Task :app:mergeExtDexDebug
+> Task :app:buildCMakeDebug[arm64-v8a]
+> Task :app:mergeDebugJniLibFolders
+> Task :app:mergeDebugNativeLibs
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:stripDebugDebugSymbols
+> Task :app:processDebugResources
 > Task :app:compileDebugKotlin
-e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/network/RemoteControlServer.kt:583:31 Java type mismatch expected (Mutable)Map<(raw) Any?, (raw) Any?>! but found MutableMap<String, Any>. Use explicit cast
-e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/xposed/AudioHooks.kt:228:95 Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type Class<CapturedType(out Any)>?
-e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/xposed/VirtualCamModule.kt:17:1 Class 'VirtualCamModule' is not abstract and does not implement abstract member public abstract fun handleLoadPackage(lpparam: XC_LoadPackage.LoadPackageParam!): Unit defined in de.robv.android.xposed.IXposedHookLoadPackage
-e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/xposed/VirtualCamModule.kt:33:5 'handleLoadPackage' overrides nothing
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/xposed/AudioHooks.kt:228:93 Type mismatch: inferred type is String? but CharSequence was expected
 
 > Task :app:compileDebugKotlin FAILED
 
-FAILURE: Build completed with 2 failures.
+FAILURE: Build failed with an exception.
 
-1: Task failed with an exception.
------------
-* What went wrong:
-Execution failed for task ':app:buildCMakeDebug[arm64-v8a]'.
-> com.android.ide.common.process.ProcessException: ninja: Entering directory `/home/runner/work/Android-virtual-cam/Android-virtual-cam/app/.cxx/Debug/2b4m6333/arm64-v8a'
-  [1/28] Building C object CMakeFiles/rnnoise.dir/rnnoise_stub/rnnoise_data.c.o
-  [2/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/AAFilter.cpp.o
-  [3/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/FIFOSampleBuffer.cpp.o
-  [4/28] Building C object CMakeFiles/rnnoise.dir/rnnoise_stub/rnnoise_stub.c.o
-  [5/28] Building CXX object CMakeFiles/rnnoise.dir/jni/rnnoise_jni.cpp.o
-  [6/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/SoundTouch.cpp.o
-  [7/28] Linking CXX shared library /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/build/intermediates/cxx/Debug/2b4m6333/obj/arm64-v8a/librnnoise.so
-  [8/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/FIRFilter.cpp.o
-  [9/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/RateTransposer.cpp.o
-  [10/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateCubic.cpp.o
-  [11/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateLinear.cpp.o
-  [12/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/BPMDetect.cpp.o
-  [13/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateShannon.cpp.o
-  [14/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/PeakFinder.cpp.o
-  [15/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/cpu_detect_arm.cpp.o
-  [16/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/TDStretch.cpp.o
-  [17/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/eq.cpp.o
-  [18/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/noise_gate.cpp.o
-  [19/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/chorus.cpp.o
-  [20/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/compressor.cpp.o
-  [21/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/vcam_dsp.cpp.o
-  [22/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/reverb.cpp.o
-  [23/28] Building CXX object CMakeFiles/soundtouch.dir/jni/soundtouch_jni.cpp.o
-  [24/28] Linking CXX shared library /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/build/intermediates/cxx/Debug/2b4m6333/obj/arm64-v8a/libsoundtouch.so
-  FAILED: /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/build/intermediates/cxx/Debug/2b4m6333/obj/arm64-v8a/libsoundtouch.so 
-  : && /usr/local/lib/android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/usr/local/lib/android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Wl,--no-undefined -Qunused-arguments -shared -Wl,-soname,libsoundtouch.so -o /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/build/intermediates/cxx/Debug/2b4m6333/obj/arm64-v8a/libsoundtouch.so CMakeFiles/soundtouch.dir/soundtouch/source/AAFilter.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/FIFOSampleBuffer.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/FIRFilter.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/RateTransposer.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/SoundTouch.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/TDStretch.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/BPMDetect.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateCubic.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateLinear.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateShannon.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/PeakFinder.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/cpu_detect_arm.cpp.o CMakeFiles/soundtouch.dir/jni/soundtouch_jni.cpp.o  -landroid  -llog  -latomic -lm && :
-  ld: error: undefined symbol: detectCPUextensions()
-  >>> referenced by FIRFilter.cpp:302 (/home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/cpp/soundtouch/source/FIRFilter.cpp:302)
-  >>>               CMakeFiles/soundtouch.dir/soundtouch/source/FIRFilter.cpp.o:(soundtouch::FIRFilter::newInstance())
-  >>> referenced by TDStretch.cpp:747 (/home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/cpp/soundtouch/source/TDStretch.cpp:747)
-  >>>               CMakeFiles/soundtouch.dir/soundtouch/source/TDStretch.cpp.o:(soundtouch::TDStretch::newInstance())
-  clang++: error: linker command failed with exit code 1 (use -v to see invocation)
-  [25/28] Building CXX object CMakeFiles/vcamdsp.dir/jni/vcamdsp_jni.cpp.o
-  [26/28] Building CXX object CMakeFiles/vcamyuv.dir/vcamyuv/yuv_scaler.cpp.o
-  ninja: build stopped: subcommand failed.
-  
-  C++ build system [build] failed while executing:
-      /usr/local/lib/android/sdk/cmake/3.22.1/bin/ninja \
-        -C \
-        /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/.cxx/Debug/2b4m6333/arm64-v8a \
-        rnnoise \
-        soundtouch \
-        vcamdsp \
-        vcamyuv
-    from /home/runner/work/Android-virtual-cam/Android-virtual-cam/app
-
-* Try:
-> Run with --info or --debug option to get more log output.
-> Run with --scan to get full insights.
-> Get more help at https://help.gradle.org.
-
-* Exception is:
-org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:buildCMakeDebug[arm64-v8a]'.
-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:148)
-	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:282)
-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:146)
-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:134)
-	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
-	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
-	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
-	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
-	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
-	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
-	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
-	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:80)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
-	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:463)
-	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:380)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
-Caused by: org.gradle.internal.UncheckedException: com.android.ide.common.process.ProcessException: ninja: Entering directory `/home/runner/work/Android-virtual-cam/Android-virtual-cam/app/.cxx/Debug/2b4m6333/arm64-v8a'
-[1/28] Building C object CMakeFiles/rnnoise.dir/rnnoise_stub/rnnoise_data.c.o
-[2/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/AAFilter.cpp.o
-[3/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/FIFOSampleBuffer.cpp.o
-[4/28] Building C object CMakeFiles/rnnoise.dir/rnnoise_stub/rnnoise_stub.c.o
-[5/28] Building CXX object CMakeFiles/rnnoise.dir/jni/rnnoise_jni.cpp.o
-[6/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/SoundTouch.cpp.o
-[7/28] Linking CXX shared library /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/build/intermediates/cxx/Debug/2b4m6333/obj/arm64-v8a/librnnoise.so
-[8/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/FIRFilter.cpp.o
-[9/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/RateTransposer.cpp.o
-[10/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateCubic.cpp.o
-[11/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateLinear.cpp.o
-[12/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/BPMDetect.cpp.o
-[13/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateShannon.cpp.o
-[14/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/PeakFinder.cpp.o
-[15/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/cpu_detect_arm.cpp.o
-[16/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/TDStretch.cpp.o
-[17/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/eq.cpp.o
-[18/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/noise_gate.cpp.o
-[19/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/chorus.cpp.o
-[20/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/compressor.cpp.o
-[21/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/vcam_dsp.cpp.o
-[22/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/reverb.cpp.o
-[23/28] Building CXX object CMakeFiles/soundtouch.dir/jni/soundtouch_jni.cpp.o
-[24/28] Linking CXX shared library /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/build/intermediates/cxx/Debug/2b4m6333/obj/arm64-v8a/libsoundtouch.so
-FAILED: /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/build/intermediates/cxx/Debug/2b4m6333/obj/arm64-v8a/libsoundtouch.so 
-: && /usr/local/lib/android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/usr/local/lib/android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Wl,--no-undefined -Qunused-arguments -shared -Wl,-soname,libsoundtouch.so -o /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/build/intermediates/cxx/Debug/2b4m6333/obj/arm64-v8a/libsoundtouch.so CMakeFiles/soundtouch.dir/soundtouch/source/AAFilter.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/FIFOSampleBuffer.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/FIRFilter.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/RateTransposer.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/SoundTouch.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/TDStretch.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/BPMDetect.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateCubic.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateLinear.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateShannon.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/PeakFinder.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/cpu_detect_arm.cpp.o CMakeFiles/soundtouch.dir/jni/soundtouch_jni.cpp.o  -landroid  -llog  -latomic -lm && :
-ld: error: undefined symbol: detectCPUextensions()
->>> referenced by FIRFilter.cpp:302 (/home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/cpp/soundtouch/source/FIRFilter.cpp:302)
->>>               CMakeFiles/soundtouch.dir/soundtouch/source/FIRFilter.cpp.o:(soundtouch::FIRFilter::newInstance())
->>> referenced by TDStretch.cpp:747 (/home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/cpp/soundtouch/source/TDStretch.cpp:747)
->>>               CMakeFiles/soundtouch.dir/soundtouch/source/TDStretch.cpp.o:(soundtouch::TDStretch::newInstance())
-clang++: error: linker command failed with exit code 1 (use -v to see invocation)
-[25/28] Building CXX object CMakeFiles/vcamdsp.dir/jni/vcamdsp_jni.cpp.o
-[26/28] Building CXX object CMakeFiles/vcamyuv.dir/vcamyuv/yuv_scaler.cpp.o
-ninja: build stopped: subcommand failed.
-
-C++ build system [build] failed while executing:
-    /usr/local/lib/android/sdk/cmake/3.22.1/bin/ninja \
-      -C \
-      /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/.cxx/Debug/2b4m6333/arm64-v8a \
-      rnnoise \
-      soundtouch \
-      vcamdsp \
-      vcamyuv
-  from /home/runner/work/Android-virtual-cam/Android-virtual-cam/app
-	at org.gradle.internal.UncheckedException.throwAsUncheckedException(UncheckedException.java:68)
-	at org.gradle.internal.UncheckedException.throwAsUncheckedException(UncheckedException.java:41)
-	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:128)
-	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.doExecute(StandardTaskAction.java:58)
-	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
-	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
-	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:247)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
-	at org.gradle.internal.operations.DefaultBuildOperationExecutor.run(DefaultBuildOperationExecutor.java:68)
-	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:232)
-	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:215)
-	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:198)
-	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:165)
-	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:105)
-	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:44)
-	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:59)
-	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:56)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
-	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
-	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:56)
-	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:44)
-	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:41)
-	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:74)
-	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
-	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:50)
-	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:28)
-	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:67)
-	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:37)
-	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:61)
-	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:26)
-	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:64)
-	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:42)
-	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:40)
-	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:29)
-	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:189)
-	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$1(BuildCacheStep.java:75)
-	at org.gradle.internal.Either$Right.fold(Either.java:175)
-	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:59)
-	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:73)
-	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:48)
-	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:44)
-	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:33)
-	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:76)
-	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:54)
-	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:54)
-	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:36)
-	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:65)
-	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:36)
-	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
-	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
-	at org.gradle.internal.execution.steps.ResolveCachingStateStep.execute(ResolveCachingStateStep.java:76)
-	at org.gradle.internal.execution.steps.ResolveCachingStateStep.execute(ResolveCachingStateStep.java:37)
-	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:106)
-	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:55)
-	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:64)
-	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:43)
-	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.executeWithNonEmptySources(AbstractSkipEmptyWorkStep.java:125)
-	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:56)
-	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:36)
-	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
-	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:36)
-	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:23)
-	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:75)
-	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:41)
-	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.lambda$execute$0(AssignMutableWorkspaceStep.java:35)
-	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:292)
-	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:31)
-	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:22)
-	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:40)
-	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:23)
-	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:66)
-	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:66)
-	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:38)
-	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:36)
-	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:26)
-	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:47)
-	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:34)
-	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:61)
-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:145)
-	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:134)
-	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
-	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
-	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
-	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
-	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
-	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
-	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
-	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
-	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
-	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:80)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
-	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
-	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:463)
-	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:380)
-	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
-Caused by: com.android.ide.common.process.ProcessException: ninja: Entering directory `/home/runner/work/Android-virtual-cam/Android-virtual-cam/app/.cxx/Debug/2b4m6333/arm64-v8a'
-[1/28] Building C object CMakeFiles/rnnoise.dir/rnnoise_stub/rnnoise_data.c.o
-[2/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/AAFilter.cpp.o
-[3/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/FIFOSampleBuffer.cpp.o
-[4/28] Building C object CMakeFiles/rnnoise.dir/rnnoise_stub/rnnoise_stub.c.o
-[5/28] Building CXX object CMakeFiles/rnnoise.dir/jni/rnnoise_jni.cpp.o
-[6/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/SoundTouch.cpp.o
-[7/28] Linking CXX shared library /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/build/intermediates/cxx/Debug/2b4m6333/obj/arm64-v8a/librnnoise.so
-[8/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/FIRFilter.cpp.o
-[9/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/RateTransposer.cpp.o
-[10/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateCubic.cpp.o
-[11/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateLinear.cpp.o
-[12/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/BPMDetect.cpp.o
-[13/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateShannon.cpp.o
-[14/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/PeakFinder.cpp.o
-[15/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/cpu_detect_arm.cpp.o
-[16/28] Building CXX object CMakeFiles/soundtouch.dir/soundtouch/source/TDStretch.cpp.o
-[17/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/eq.cpp.o
-[18/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/noise_gate.cpp.o
-[19/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/chorus.cpp.o
-[20/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/compressor.cpp.o
-[21/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/vcam_dsp.cpp.o
-[22/28] Building CXX object CMakeFiles/vcamdsp.dir/vcamdsp/reverb.cpp.o
-[23/28] Building CXX object CMakeFiles/soundtouch.dir/jni/soundtouch_jni.cpp.o
-[24/28] Linking CXX shared library /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/build/intermediates/cxx/Debug/2b4m6333/obj/arm64-v8a/libsoundtouch.so
-FAILED: /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/build/intermediates/cxx/Debug/2b4m6333/obj/arm64-v8a/libsoundtouch.so 
-: && /usr/local/lib/android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android26 --sysroot=/usr/local/lib/android/sdk/ndk/25.1.8937393/toolchains/llvm/prebuilt/linux-x86_64/sysroot -fPIC -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security   -fno-limit-debug-info  -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Wl,--no-undefined -Qunused-arguments -shared -Wl,-soname,libsoundtouch.so -o /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/build/intermediates/cxx/Debug/2b4m6333/obj/arm64-v8a/libsoundtouch.so CMakeFiles/soundtouch.dir/soundtouch/source/AAFilter.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/FIFOSampleBuffer.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/FIRFilter.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/RateTransposer.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/SoundTouch.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/TDStretch.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/BPMDetect.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateCubic.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateLinear.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/InterpolateShannon.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/PeakFinder.cpp.o CMakeFiles/soundtouch.dir/soundtouch/source/cpu_detect_arm.cpp.o CMakeFiles/soundtouch.dir/jni/soundtouch_jni.cpp.o  -landroid  -llog  -latomic -lm && :
-ld: error: undefined symbol: detectCPUextensions()
->>> referenced by FIRFilter.cpp:302 (/home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/cpp/soundtouch/source/FIRFilter.cpp:302)
->>>               CMakeFiles/soundtouch.dir/soundtouch/source/FIRFilter.cpp.o:(soundtouch::FIRFilter::newInstance())
->>> referenced by TDStretch.cpp:747 (/home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/cpp/soundtouch/source/TDStretch.cpp:747)
->>>               CMakeFiles/soundtouch.dir/soundtouch/source/TDStretch.cpp.o:(soundtouch::TDStretch::newInstance())
-clang++: error: linker command failed with exit code 1 (use -v to see invocation)
-[25/28] Building CXX object CMakeFiles/vcamdsp.dir/jni/vcamdsp_jni.cpp.o
-[26/28] Building CXX object CMakeFiles/vcamyuv.dir/vcamyuv/yuv_scaler.cpp.o
-ninja: build stopped: subcommand failed.
-
-C++ build system [build] failed while executing:
-    /usr/local/lib/android/sdk/cmake/3.22.1/bin/ninja \
-      -C \
-      /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/.cxx/Debug/2b4m6333/arm64-v8a \
-      rnnoise \
-      soundtouch \
-      vcamdsp \
-      vcamyuv
-  from /home/runner/work/Android-virtual-cam/Android-virtual-cam/app
-	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.execute(ExecuteProcess.kt:288)
-	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt$executeProcess$1.invoke(ExecuteProcess.kt:108)
-	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt$executeProcess$1.invoke(ExecuteProcess.kt:106)
-	at com.android.build.gradle.internal.cxx.timing.TimingEnvironmentKt.time(TimingEnvironment.kt:32)
-	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.executeProcess(ExecuteProcess.kt:106)
-	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.executeProcess$default(ExecuteProcess.kt:85)
-	at com.android.build.gradle.internal.cxx.build.CxxRegularBuilder.executeProcessBatch(CxxRegularBuilder.kt:332)
-	at com.android.build.gradle.internal.cxx.build.CxxRegularBuilder.build(CxxRegularBuilder.kt:129)
-	at com.android.build.gradle.tasks.ExternalNativeBuildTask$doTaskAction$$inlined$recordTaskAction$1.invoke(BaseTask.kt:70)
-	at com.android.build.gradle.internal.tasks.Blocks.recordSpan(Blocks.java:51)
-	at com.android.build.gradle.tasks.ExternalNativeBuildTask.doTaskAction(ExternalNativeBuildTask.kt:145)
-	at com.android.build.gradle.internal.tasks.UnsafeOutputsTask$taskAction$$inlined$recordTaskAction$1.invoke(BaseTask.kt:65)
-	at com.android.build.gradle.internal.tasks.Blocks.recordSpan(Blocks.java:51)
-	at com.android.build.gradle.internal.tasks.UnsafeOutputsTask.taskAction(UnsafeOutputsTask.kt:63)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
-	... 117 more
-Caused by: com.android.ide.common.process.ProcessException: Error while executing process /usr/local/lib/android/sdk/cmake/3.22.1/bin/ninja with arguments {-C /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/.cxx/Debug/2b4m6333/arm64-v8a rnnoise soundtouch vcamdsp vcamyuv}
-	at com.android.build.gradle.internal.process.GradleProcessResult.buildProcessException(GradleProcessResult.java:73)
-	at com.android.build.gradle.internal.process.GradleProcessResult.assertNormalExitValue(GradleProcessResult.java:48)
-	at com.android.build.gradle.internal.cxx.process.ExecuteProcessKt.execute(ExecuteProcess.kt:277)
-	... 134 more
-Caused by: org.gradle.process.internal.ExecException: Process 'command '/usr/local/lib/android/sdk/cmake/3.22.1/bin/ninja'' finished with non-zero exit value 1
-	at org.gradle.process.internal.DefaultExecHandle$ExecResultImpl.assertNormalExitValue(DefaultExecHandle.java:431)
-	at com.android.build.gradle.internal.process.GradleProcessResult.assertNormalExitValue(GradleProcessResult.java:46)
-	... 135 more
-
-==============================================================================
-
-2: Task failed with an exception.
------------
 * What went wrong:
 Execution failed for task ':app:compileDebugKotlin'.
 > A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
@@ -436,11 +91,38 @@ org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:com
 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:463)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:380)
+	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:116)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:138)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:123)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
+	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:51)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$10(DefaultBuildLifecycleController.java:313)
+	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
+	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$8(StateTransitionController.java:177)
+	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
+	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:177)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:304)
+	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:264)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:128)
+	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:181)
+	at org.gradle.composite.internal.DefaultBuildController.access$000(DefaultBuildController.java:50)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:198)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:80)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:198)
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:840)
 Caused by: org.gradle.workers.internal.DefaultWorkerExecutor$WorkExecutionException: A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleCompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
 	at org.gradle.workers.internal.DefaultWorkerExecutor$WorkItemExecution.waitForCompletion(DefaultWorkerExecutor.java:283)
 	at org.gradle.internal.work.DefaultAsyncWorkTracker.lambda$waitForItemsAndGatherFailures$2(DefaultAsyncWorkTracker.java:130)
@@ -502,7 +184,6 @@ Caused by: org.gradle.workers.internal.DefaultWorkerExecutor$WorkExecutionExcept
 	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:33)
 	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:76)
 	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:54)
-	at java.base/java.util.Optional.orElseGet(Optional.java:364)
 	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:54)
 	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:36)
 	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:65)
@@ -530,7 +211,6 @@ Caused by: org.gradle.workers.internal.DefaultWorkerExecutor$WorkExecutionExcept
 	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:40)
 	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:23)
 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:66)
-	at java.base/java.util.Optional.orElseGet(Optional.java:364)
 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:66)
 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:38)
 	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:36)
@@ -566,11 +246,38 @@ Caused by: org.gradle.workers.internal.DefaultWorkerExecutor$WorkExecutionExcept
 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:463)
 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:380)
+	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:116)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:138)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:123)
+	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
+	at org.gradle.execution.DryRunBuildExecutionAction.execute(DryRunBuildExecutionAction.java:51)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:199)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:73)
+	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$10(DefaultBuildLifecycleController.java:313)
+	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:266)
+	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$8(StateTransitionController.java:177)
+	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:44)
+	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:177)
+	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:304)
+	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:264)
+	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:128)
+	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:181)
+	at org.gradle.composite.internal.DefaultBuildController.access$000(DefaultBuildController.java:50)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:198)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:80)
+	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:198)
 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:840)
 Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilation error. See log for more details
 	at org.jetbrains.kotlin.gradle.tasks.TasksUtilsKt.throwExceptionIfCompilationFailed(tasksUtils.kt:20)
 	at org.jetbrains.kotlin.compilerRunner.GradleKotlinCompilerWork.run(GradleKotlinCompilerWork.kt:141)
@@ -593,7 +300,6 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	at org.gradle.workers.internal.AbstractWorker.executeWrappedInBuildOperation(AbstractWorker.java:41)
 	at org.gradle.workers.internal.NoIsolationWorkerFactory$1.execute(NoIsolationWorkerFactory.java:59)
 	at org.gradle.workers.internal.DefaultWorkerExecutor.lambda$submitWork$0(DefaultWorkerExecutor.java:170)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
 	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runExecution(DefaultConditionalExecutionQueue.java:187)
 	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.access$700(DefaultConditionalExecutionQueue.java:120)
 	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner$1.run(DefaultConditionalExecutionQueue.java:162)
@@ -603,11 +309,8 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:133)
 	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.runBatch(DefaultConditionalExecutionQueue.java:157)
 	at org.gradle.internal.work.DefaultConditionalExecutionQueue$ExecutionRunner.run(DefaultConditionalExecutionQueue.java:126)
-	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	... 5 more
+	... 2 more
 
-==============================================================================
 
-BUILD FAILED in 2m 44s
-24 actionable tasks: 23 executed, 1 up-to-date
+BUILD FAILED in 2m 11s
+30 actionable tasks: 29 executed, 1 up-to-date
