@@ -20,6 +20,7 @@ Daemon will be stopped at the end of the build
 > Task :app:compileDebugShaders NO-SOURCE
 > Task :app:generateDebugAssets UP-TO-DATE
 > Task :app:mergeDebugAssets
+> Task :app:processDebugManifestForPackage
 > Task :app:compressDebugAssets
 > Task :app:checkDebugDuplicateClasses UP-TO-DATE
 > Task :app:mergeLibDexDebug
@@ -28,35 +29,47 @@ Daemon will be stopped at the end of the build
 WARNING: /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/libs/RootEncoder.jar: D8: Invalid stack map table at instruction index 2: invokespecial Ljava/lang/Object;<init>()V, error: Constructor mismatch, expected constructor from com.pedro.common.AudioCodec, but was java.lang.Object.<init>().
 WARNING: /home/runner/work/Android-virtual-cam/Android-virtual-cam/app/libs/RootEncoder.jar: D8: Invalid stack map table at instruction index 2: invokespecial Ljava/lang/Object;<init>()V, error: Constructor mismatch, expected constructor from com.pedro.common.VideoCodec, but was java.lang.Object.<init>().
 
+> Task :app:processDebugResources
+
 > Task :app:configureCMakeDebug[arm64-v8a]
 [CXX5304] This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
 [CXX5304] This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
 
-> Task :app:processDebugManifestForPackage
-> Task :app:mergeExtDexDebug
-> Task :app:buildCMakeDebug[arm64-v8a]
-> Task :app:mergeDebugJniLibFolders
-> Task :app:mergeDebugNativeLibs
-> Task :app:validateSigningDebug
-> Task :app:writeDebugAppMetadata
-> Task :app:stripDebugDebugSymbols
-> Task :app:writeDebugSigningConfigVersions
-> Task :app:processDebugResources
 > Task :app:compileDebugKotlin
-e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/replay/ReplayBuffer.kt:55:5 Platform declaration clash: The following declarations have the same JVM signature (setOutputFormat(Landroid/media/MediaFormat;)V):
-    fun `<set-outputFormat>`(`<set-?>`: MediaFormat?): Unit defined in com.androidvirtualcam.replay.ReplayBuffer
-    fun setOutputFormat(format: MediaFormat): Unit defined in com.androidvirtualcam.replay.ReplayBuffer
-e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/replay/ReplayBuffer.kt:180:5 Platform declaration clash: The following declarations have the same JVM signature (setOutputFormat(Landroid/media/MediaFormat;)V):
-    fun `<set-outputFormat>`(`<set-?>`: MediaFormat?): Unit defined in com.androidvirtualcam.replay.ReplayBuffer
-    fun setOutputFormat(format: MediaFormat): Unit defined in com.androidvirtualcam.replay.ReplayBuffer
-e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/streaming/StreamingManager.kt:745:9 Platform declaration clash: The following declarations have the same JVM signature (setBitrate(I)V):
-    fun `<set-bitrate>`(`<set-?>`: Int): Unit defined in com.androidvirtualcam.streaming.StreamingManager.VideoEncoderWrapper
-    fun setBitrate(newBitrate: Int): Unit defined in com.androidvirtualcam.streaming.StreamingManager.VideoEncoderWrapper
-e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/streaming/StreamingManager.kt:1002:9 Platform declaration clash: The following declarations have the same JVM signature (setBitrate(I)V):
-    fun `<set-bitrate>`(`<set-?>`: Int): Unit defined in com.androidvirtualcam.streaming.StreamingManager.VideoEncoderWrapper
-    fun setBitrate(newBitrate: Int): Unit defined in com.androidvirtualcam.streaming.StreamingManager.VideoEncoderWrapper
+> Task :app:mergeExtDexDebug
 
 > Task :app:compileDebugKotlin FAILED
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/ui/viewmodels/VoiceViewModel.kt:100:38 Unresolved reference: isModelDownloaded
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/ui/viewmodels/VoiceViewModel.kt:268:56 Cannot find a parameter with this name: durationSec
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/voice/VoiceChangerEngine.kt:512:34 Unresolved reference: pow
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/voice/VoiceChangerEngine.kt:515:38 Overload resolution ambiguity: 
+public final operator fun div(other: Byte): Int defined in kotlin.Int
+public final operator fun div(other: Double): Double defined in kotlin.Int
+public final operator fun div(other: Float): Float defined in kotlin.Int
+public final operator fun div(other: Int): Int defined in kotlin.Int
+public final operator fun div(other: Long): Long defined in kotlin.Int
+public final operator fun div(other: Short): Int defined in kotlin.Int
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/voice/VoiceChangerEngine.kt:518:28 Overload resolution ambiguity: 
+public final operator fun times(other: Byte): Int defined in kotlin.Int
+public final operator fun times(other: Double): Double defined in kotlin.Int
+public final operator fun times(other: Float): Float defined in kotlin.Int
+public final operator fun times(other: Int): Int defined in kotlin.Int
+public final operator fun times(other: Long): Long defined in kotlin.Int
+public final operator fun times(other: Short): Int defined in kotlin.Int
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/voice/VoiceChangerEngine.kt:524:41 Overload resolution ambiguity: 
+public final operator fun minus(other: Byte): Int defined in kotlin.Int
+public final operator fun minus(other: Double): Double defined in kotlin.Int
+public final operator fun minus(other: Float): Float defined in kotlin.Int
+public final operator fun minus(other: Int): Int defined in kotlin.Int
+public final operator fun minus(other: Long): Long defined in kotlin.Int
+public final operator fun minus(other: Short): Int defined in kotlin.Int
+e: file:///home/runner/work/Android-virtual-cam/Android-virtual-cam/app/src/main/java/com/androidvirtualcam/voice/VoiceChangerEngine.kt:524:54 Overload resolution ambiguity: 
+public final operator fun times(other: Byte): Float defined in kotlin.Float
+public final operator fun times(other: Double): Double defined in kotlin.Float
+public final operator fun times(other: Float): Float defined in kotlin.Float
+public final operator fun times(other: Int): Float defined in kotlin.Float
+public final operator fun times(other: Long): Float defined in kotlin.Float
+public final operator fun times(other: Short): Float defined in kotlin.Float
 
 FAILURE: Build failed with an exception.
 
@@ -263,5 +276,5 @@ Caused by: org.jetbrains.kotlin.gradle.tasks.CompilationErrorException: Compilat
 	... 2 more
 
 
-BUILD FAILED in 3m 14s
-30 actionable tasks: 29 executed, 1 up-to-date
+BUILD FAILED in 2m 21s
+23 actionable tasks: 22 executed, 1 up-to-date
